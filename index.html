@@ -16,14 +16,14 @@
     <meta property="og:description" content="Expert human rights barrister specialising in immigration, refugee law, and Waitangi Tribunal cases in Auckland, New Zealand.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.maithilisreen.com">
-    <meta property="og:image" content="https://www.maithilisreen.com/Maithili Photo.jpeg">
+    <meta property="og:image" content="https://www.maithilisreen.com/Maithili Photo.jpg">
     <meta property="og:locale" content="en_NZ">
     
     <!-- Twitter Card Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Maithili Sreen - Human Rights Lawyer Auckland">
     <meta name="twitter:description" content="Expert human rights barrister specialising in immigration, refugee law, and Waitangi Tribunal cases.">
-    <meta name="twitter:image" content="https://www.maithilisreen.com/Maithili Photo.jpeg">
+    <meta name="twitter:image" content="https://www.maithilisreen.com/Maithili Photo.jpg">
     
     <!-- Canonical URL -->
     <link rel="canonical" href="https://www.maithilisreen.com">
@@ -40,9 +40,9 @@
       "jobTitle": "Human Rights Barrister",
       "description": "Expert human rights barrister specialising in immigration law, refugee law, and Waitangi Tribunal cases",
       "url": "https://www.maithilisreen.com",
-      "image": "https://www.maithilisreen.com/Maithili Photo.jpeg",
+      "image": "https://www.maithilisreen.com/Maithili Photo.jpg",
       "telephone": "+64-22-3258600",
-      "email": "maithili@brycelyall.com",
+      "email": "maithili@maithilisreen.co.nz",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Auckland",
@@ -96,13 +96,34 @@
         /* Header */
         header {
             position: fixed; width: 100%; top: 0; z-index: 1000;
-            background-color: rgba(26, 26, 26, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 20px 0;
+            background-color: #1a1a1a;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 18px 0;
         }
 
-        nav { display: flex; justify-content: space-between; align-items: center; padding: 0 60px; }
-        .logo { font-size: 20px; font-weight: 300; colour: #ffffff; color: #ffffff; letter-spacing: 0.05em; }
+        nav { display: flex; justify-content: space-between; align-items: center; min-height: 46px; padding: 0 60px; gap: 24px; }
+        .logo {
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+            flex-shrink: 0;
+            line-height: 0;
+        }
+        .logo img {
+            display: block;
+            height: 42px;
+            width: auto;
+            max-width: min(42vw, 320px);
+            object-fit: contain;
+            opacity: 0.96;
+            transform: translateY(1px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        .logo:hover img,
+        .logo:focus-visible img {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
         .nav-links { display: flex; list-style: none; gap: 40px; }
         .nav-links a { colour: #ffffff; color: #ffffff; text-decoration: none; font-size: 18px; font-weight: 400; transition: colour 0.3s ease, color 0.3s ease; }
@@ -116,8 +137,8 @@
         .mobile-menu-toggle.active span:nth-child(3) { transform: rotate(45deg) translate(-5px, -6px); }
 
         .mobile-nav {
-            display: none; position: fixed; top: 80px; left: 0; width: 100%;
-            background-color: rgba(26, 26, 26, 0.98); backdrop-filter: blur(10px);
+            display: none; position: fixed; top: 83px; left: 0; width: 100%;
+            background-color: #1a1a1a;
             padding: 20px 0; z-index: 999;
         }
         .mobile-nav.active { display: block; }
@@ -207,7 +228,28 @@
         .practice-area-card p:last-child { margin-bottom: 0; }
 
         /* Contact Section - Clean Design */
-        .contact { padding: 120px 60px; background-color: #1a1a1a; colour: #ffffff; color: #ffffff; }
+        .contact {
+            padding: 120px 60px;
+            background-color: #1a1a1a;
+            colour: #ffffff;
+            color: #ffffff;
+            position: relative;
+            overflow: hidden;
+        }
+        .contact::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px);
+            background-size: 30px 30px;
+            animation: parallaxMove 2s linear infinite;
+            pointer-events: none;
+            z-index: 1;
+        }
+        .contact > * { position: relative; z-index: 2; }
         .contact h2 { font-size: 3rem; font-weight: 300; margin-bottom: 40px; colour: #ffffff; color: #ffffff; }
         .contact-subtitle { font-size: 20px; colour: #cccccc; color: #cccccc; margin-bottom: 80px; max-width: 800px; }
         .contact-subtitle a { colour: #ffffff; color: #ffffff; text-decoration: underline; transition: colour 0.3s ease, color 0.3s ease; }
@@ -222,18 +264,16 @@
         .contact-item a:last-child { margin-bottom: 0; }
 
         /* Footer */
-        footer { background-color: #0a0a0a; colour: #666; color: #666; padding: 60px 60px 40px 60px; border-top: 1px solid #333; }
-        .footer-content { display: flex; flex-direction: column; align-items: center; gap: 20px; }
-        .copyright { font-size: 12px; colour: #666; color: #666; margin: 0; }
-        .footer-name {
-            font-size: clamp(4rem, 10vw, 8rem); font-weight: 700; letter-spacing: 0.2em;
-            colour: #aaaaaa; color: #aaaaaa; text-align: center; margin: 0; width: 100%; text-transform: uppercase;
-        }
+        footer { background-color: #0a0a0a; colour: #666; color: #666; padding: 48px 60px 40px 60px; border-top: 1px solid #333; }
+        .footer-content { display: flex; flex-direction: column; align-items: center; gap: 14px; text-align: center; max-width: 760px; margin: 0 auto; }
+        .footer-closing { font-size: clamp(1.1rem, 2vw, 1.45rem); line-height: 1.6; color: #d6d6d6; margin: 0; }
+        .footer-divider { width: 72px; height: 1px; background-color: rgba(255, 255, 255, 0.18); }
+        .copyright { font-size: 13px; colour: #9c9c9c; color: #9c9c9c; margin: 0; }
 
         /* Responsive Design */
         @media (max-width: 768px) {
             nav { padding: 0 30px; }
-            .logo { font-size: 24px; }
+            .logo img { height: 31px; max-width: 58vw; }
             .nav-links { display: none; }
             .mobile-menu-toggle { display: flex; }
 
@@ -250,8 +290,7 @@
 
             .section-title, .about-text h2, .contact h2 { font-size: 2rem; }
 
-            footer { padding: 40px 30px 30px 30px; }
-            .footer-name { font-size: clamp(2.5rem, 8vw, 5rem); letter-spacing: 0.15em; }
+            footer { padding: 34px 30px; }
 
             .nav-links a { font-size: 16px; }
 
@@ -262,12 +301,32 @@
             .contact-info { grid-template-columns: 1fr; gap: 40px; }
             .contact-subtitle { font-size: 18px; }
         }
+
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            .fade-in,
+            .fade-in.visible,
+            .logo img,
+            .cta-button,
+            .practice-area-card,
+            .profile-photo {
+                transition: none;
+            }
+            .hero::before {
+                animation: none;
+            }
+            .contact::before {
+                animation: none;
+            }
+        }
     </style>
 </head>
 <body>
     <header>
         <nav role="navigation" aria-label="Main navigation">
-<div class="logo">Maithili Sreen</div>
+            <a class="logo" href="#home" aria-label="Maithili Sreen home">
+                <img src="Logo.png" alt="Maithili Sreen Barrister logo" width="1123" height="288">
+            </a>
 
             <ul class="nav-links">
                 <li><a href="#home" aria-label="Go to home section">Home</a></li>
@@ -303,7 +362,7 @@
         <section id="about" class="about fade-in">
             <div class="about-content">
                 <div class="about-left">
-                    <img src="Maithili Photo.jpeg" alt="Maithili Sreen, Human Rights Barrister in Auckland" class="profile-photo" width="350" height="auto">
+                    <img src="Maithili Photo.jpg" alt="Maithili Sreen, Human Rights Barrister in Auckland" class="profile-photo" width="350" height="auto">
                     <div class="credentials">
                         <h3>Legal Qualifications</h3>
                         <ul>
@@ -359,7 +418,7 @@
                 </div>
                 <div class="contact-item">
                     <h3>Email</h3>
-                    <a href="mailto:maithili@brycelyall.com" aria-label="Email Maithili Sreen">maithili@maithilisreen.co.nz</a>
+                    <a href="mailto:maithili@maithilisreen.co.nz" aria-label="Email Maithili Sreen">maithili@maithilisreen.co.nz</a>
                 </div>
                 <div class="contact-item">
                     <h3>LinkedIn</h3>
@@ -380,8 +439,9 @@
 
     <footer>
         <div class="footer-content">
-            <p class="copyright">&copy; 2025</p>
-            <h1 class="footer-name">MAITHILI SREEN</h1>
+            <p class="footer-closing">Human Rights Barrister</p>
+            <div class="footer-divider" aria-hidden="true"></div>
+            <p class="copyright">&copy; 2026 Maithili Sreen</p>
         </div>
     </footer>
 
